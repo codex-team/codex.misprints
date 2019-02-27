@@ -11,10 +11,16 @@ export default class Misprints {
 
     constructor(config: MisprintsConfig) {
         this.chatId = config.chatId;
-        this.bindServiceCall();
+        window.addEventListener('keyup', this.notifyIfNeeded);
     }
 
-    private bindServiceCall() {
+    private notifyIfNeeded(event) {
+        if (event.key === 'Enter') {
+            const selection = window.getSelection();
+            if (selection.toString().length) {
+                const fragmentPosition = selection.getRangeAt(0).getBoundingClientRect();
 
+            }
+        }
     }
 }
