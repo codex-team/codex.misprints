@@ -1,0 +1,38 @@
+{
+  "name": "@codexteam/codex.misprints",
+  "version": "1.0.0",
+  "description": "Module for sendings misprints to Slack and Telegram",
+  "main": "dist/codex.misprints.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "build:dev": "webpack --mode development",
+    "build:watch": "webpack --mode development --watch",
+    "build": "webpack --mode production",
+    "lint": "tslint ./src/**/*.ts --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codex-team/codex.misprints.git"
+  },
+  "author": {
+    "name": "CodeX",
+    "email": "team@ifmo.su",
+    "url": "https://ifmo.su"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/codex-team/codex.misprints/issues"
+  },
+  "homepage": "https://github.com/codex-team/codex.misprints#readme",
+  "devDependencies": {
+    "ts-loader": "^5.3.0",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.11.0",
+    "tslint-config-standard": "^8.0.1",
+    "typescript": "^3.1.5",
+    "webpack": "^4.23.1",
+    "webpack-cli": "^3.1.2"
+  },
+  "dependencies": {
+  }
+}
