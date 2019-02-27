@@ -1,8 +1,8 @@
 module.exports = {
   entry: './src/index.ts',
   output: {
-    filename: './codex.misprints.js',
-    library: 'Codex.misprints',
+    filename: './misprints.js',
+    library: 'Misprints',
     libraryTarget: 'umd',
     libraryExport: 'default'
   },
