@@ -1,16 +1,28 @@
-/**
- * Type of update options
- */
-import Service from './service';
+import Service from './service/index';
 
+/**
+ * Configurable options for misprints
+ */
 interface MisprintsConfig {
-  /** Number of picked reaction */
+  /** Chat's identifier */
   chatId: string;
 }
 
+/**
+ * @class Misprints
+ * @classdesc class responsible for module initialization
+ */
 export default class Misprints {
+  /**
+   *  Chat's identifier
+   */
   public chatId: string;
 
+  /**
+   * Create a misprints module.
+   * @param {object} config - object containing configurable options.
+   * @param {string} config.chatId - chat's identifier.
+   */
   constructor (config: MisprintsConfig) {
     this.chatId = config.chatId;
 
@@ -19,7 +31,11 @@ export default class Misprints {
     });
   }
 
-  private notifyIfNeeded (event) {
+  /**
+   * Check if user tries to send feedback and send it
+   * @param {KeyboardEvent} event - keyboard event.
+   */
+  private notifyIfNeeded (event: KeyboardEvent) {
     if (event.key === 'Enter' && event.shiftKey) {
       const selection = window.getSelection();
       if (selection.toString().length) {
