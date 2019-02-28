@@ -40,7 +40,7 @@ export default class Misprints {
       const selection = window.getSelection();
       if (selection.toString().length) {
         const fragmentPosition = selection.getRangeAt(0).getBoundingClientRect();
-        Service.notify(this.chatId, fragmentPosition.top, fragmentPosition.left);
+        Service.notify(this.chatId, selection.toString(), fragmentPosition.top, fragmentPosition.left);
       }
     }
   }

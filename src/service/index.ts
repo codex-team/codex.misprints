@@ -19,12 +19,15 @@ export default class Service {
   /**
    * Send request to server
    * @param {string} chatId - chat's identifier
+   * @param {string} text - selected text fragment
    * @param {number} topPosition - vertical coordinate of selected text
    * @param {number} leftPosition - horizontal coordinate of selected text
    */
-  public static async notify (chatId: string, topPosition: number, leftPosition: number) {
+  public static async notify (chatId: string, text: string, topPosition: number, leftPosition: number) {
     const params = Service.standardizeParams({
-      message: `Url: ${window.location.href}, Title: ${document.title}, Top: ${topPosition}, Left: ${leftPosition}`
+      message: `💌 Misprint
+       ${text}
+       [${document.title}](${window.location.href})`
     });
 
     const response = await fetch(`${Service.notificationEndpoint}/${chatId}`, {
