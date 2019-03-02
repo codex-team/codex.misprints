@@ -14,14 +14,14 @@ interface MisprintsConfig {
  */
 export default class Misprints {
   /**
-   *  Chat's identifier
+   *  Chat's identifier where message will be sent
    */
   public chatId: string;
 
   /**
    * Create a misprints module.
    * @param {object} config - object containing configurable options.
-   * @param {string} config.chatId - chat's identifier.
+   * @param {string} config.chatId - Chat's identifier where message will be sent
    */
   constructor (config: MisprintsConfig) {
     this.chatId = config.chatId;

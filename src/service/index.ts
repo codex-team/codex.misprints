@@ -7,15 +7,15 @@ interface Params {
 }
 
 /**
+ *  Server endpoint
+ */
+const notificationEndpoint = 'https://notify.bot.ifmo.su/u';
+
+/**
  * @class Service
  * @classdesc class responsible for server interactions
  */
 export default class Service {
-  /**
-   *  Server endpoint
-   */
-  private static notificationEndpoint = 'https://notify.bot.ifmo.su/u';
-
   /**
    * Send request to server
    * @param {string} chatId - chat's identifier
@@ -28,17 +28,13 @@ export default class Service {
        [${document.title}](${window.location.href})`
     });
 
-    const response = await fetch(`${Service.notificationEndpoint}/${chatId}`, {
+    const response = await fetch(`${notificationEndpoint}/${chatId}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
       },
       mode: 'no-cors',
-      body: new FormData({
-        message: `💌 Misprint
-       ${text}
-       [${document.title}](${window.location.href})`
-      })
+      body: params
     });
   }
 
