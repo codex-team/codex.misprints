@@ -4,7 +4,7 @@ import Service from './service/index';
  * Configurable options for misprints
  */
 interface MisprintsConfig {
-  /** Chat's identifier */
+  /** Chat's identifier where message will be sent */
   chatId: string;
 }
 
@@ -38,9 +38,9 @@ export default class Misprints {
   private notifyIfNeeded (event: KeyboardEvent) {
     if (event.key === 'Enter' && event.shiftKey) {
       const selection = window.getSelection();
+
       if (selection.toString().length) {
-        const fragmentPosition = selection.getRangeAt(0).getBoundingClientRect();
-        Service.notify(this.chatId, selection.toString(), fragmentPosition.top, fragmentPosition.left);
+        Service.notify(this.chatId, selection.toString());
       }
     }
   }

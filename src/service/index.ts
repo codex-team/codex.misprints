@@ -20,10 +20,8 @@ export default class Service {
    * Send request to server
    * @param {string} chatId - chat's identifier
    * @param {string} text - selected text fragment
-   * @param {number} topPosition - vertical coordinate of selected text
-   * @param {number} leftPosition - horizontal coordinate of selected text
    */
-  public static async notify (chatId: string, text: string, topPosition: number, leftPosition: number) {
+  public static async notify(chatId: string, text: string) {
     const params = Service.standardizeParams({
       message: `💌 Misprint
        ${text}
@@ -36,7 +34,11 @@ export default class Service {
         'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
       },
       mode: 'no-cors',
-      body: params
+      body: new FormData({
+        message: `💌 Misprint
+       ${text}
+       [${document.title}](${window.location.href})`
+      })
     });
   }
 
@@ -45,7 +47,7 @@ export default class Service {
    * @param {Params} params - chat's identifier
    * @returns {string} standardized request body
    */
-  private static standardizeParams (params: Params): string {
+  private static standardizeParams(params: Params): string {
     return Object.keys(params).map((key) => {
       return encodeURIComponent(key) + '=' + encodeURIComponent(params[key]);
     }).join('&');
