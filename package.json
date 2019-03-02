@@ -1,5 +1,5 @@
 {
-  "name": "@codexteam/codex.misprints",
+  "name": "@codexteam/misprints",
   "version": "1.0.0",
   "description": "Module for sendings misprints to Slack and Telegram",
   "main": "dist/codex.misprints.js",
