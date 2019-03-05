@@ -23,9 +23,7 @@ export default class Service {
    */
   public static async notify(chatId: string, text: string) {
     const params = Service.standardizeParams({
-      message: `💌 Misprint
-       ${text}
-       [${document.title}](${window.location.href})`
+      message: `💌 Misprint\n${text}\n[${document.title}] (${window.location.href})`
     });
 
     const response = await fetch(`${notificationEndpoint}/${chatId}`, {

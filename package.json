@@ -2,7 +2,7 @@
   "name": "@codexteam/misprints",
   "version": "1.0.0",
   "description": "Module for sendings misprints to Slack and Telegram",
-  "main": "dist/codex.misprints.js",
+  "main": "dist/misprints.js",
   "types": "index.d.ts",
   "scripts": {
     "build:dev": "webpack --mode development",
@@ -17,7 +17,7 @@
   "author": {
     "name": "CodeX",
     "email": "team@ifmo.su",
-    "url": "https://ifmo.su"
+    "url": "https://codex.so"
   },
   "license": "MIT",
   "bugs": {
