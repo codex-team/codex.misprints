@@ -1,0 +1,6 @@
+src/
+example/
+*.config.js
+yarn.lock
+tsconfig.json
+tslint.json
