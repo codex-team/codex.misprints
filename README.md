@@ -1,6 +1,30 @@
 # codex.misprints
 Module for sending misprints to Slack and Telegram
 
+## Getting started
+
+### Installation
+
+#### npm or Yarn
+
+```bash
+npm install @codexteam/misprints
+```
+
+or
+
+```bash
+yarn add @codexteam/misprints
+```
+
+#### Download from CDN
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/@codexteam/misprints"></script>
+```
+
+## Usage
+
 ### Initialization
 ```javascript
 new Misprints({
