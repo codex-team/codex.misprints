@@ -4,6 +4,7 @@
 interface Params {
   /** Message that will be displayed in chat */
   message: string;
+  parse_mode: string;
 }
 
 /**
@@ -23,7 +24,8 @@ export default class Service {
    */
   public static notify(chatId: string, text: string) {
     const params = Service.standardizeParams({
-      message: `💌 Misprint\n${text}\n[${document.title}](${window.location.href})`
+      message: `💌 Misprint\n${text}\n[${document.title}](${window.location.href})`,
+      parse_mode: 'Markdown'
     });
 
     return fetch(`${notificationEndpoint}/${chatId}`, {
