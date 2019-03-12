@@ -10,7 +10,7 @@ interface Params {
 /**
  *  Server endpoint
  */
-const notificationEndpoint = 'https://notify.bot.ifmo.su/u';
+const notificationEndpoint = 'https://notify.bot.codex.so/u';
 
 /**
  * @class Service
