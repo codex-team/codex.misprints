@@ -23,6 +23,7 @@ export default class Service {
    * @param {string} text - selected text fragment
    */
   public static notify(chatId: string, text: string) {
+    text = text.length > 200 ? text.slice(0, 199) + '...' : text;
     const params = Service.standardizeParams({
       message: `💌 Misprint\n${text}\n[${document.title}](${window.location.href})`,
       parse_mode: 'Markdown'
