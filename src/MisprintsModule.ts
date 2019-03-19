@@ -38,13 +38,13 @@ export default class Misprints {
   private async notifyIfNeeded(event: KeyboardEvent) {
     if (event.key === 'Enter' && event.shiftKey) {
       const selection = window.getSelection();
-      const text = selection.toString();
+      const selectedText = selection.toString();
 
-      if (text.length) {
+      if (selectedText.length) {
         selection.empty();
 
         try {
-          const response = await Service.notify(this.chatId, text);
+          const response = await Service.notify(this.chatId, selectedText);
         } catch (e) {
           console.log(e);
         }
