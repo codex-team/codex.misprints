@@ -68,7 +68,6 @@ export default class Misprints {
    * @param {KeyboardEvent} event - keyboard event.
    */
   private async notifyIfNeeded(event: KeyboardEvent) {
-    console.log(event.key);
 
     if (event.key === 'Enter' && this.isShortcutKeyPressed(event)) {
       const selection = window.getSelection();
