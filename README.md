@@ -29,7 +29,7 @@ yarn add @codexteam/misprints
 ```javascript
 new Misprints({
     chatId: 'XXXXXXX',
-    shortcutKey: 'Control'
+    shortcut: 'Control'
 });
 ```
 
@@ -38,4 +38,4 @@ Where
 | name        | type      | description                                                                              |
 |-------------|-----------|------------------------------------------------------------------------------------------|
 | chatId      | `string`  | chat where message will be sent. Visit https://github.com/codex-bot/Webhooks) to get it. |
-| shortcutKey | `string`  | Key should be pressed with combination of enter to send misprint.                        |
+| shortcut    | `string`  | Shortcut triggers message sending. See https://github.com/codex-team/codex.shortcuts     |
