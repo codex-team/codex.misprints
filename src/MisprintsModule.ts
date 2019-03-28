@@ -1,4 +1,5 @@
 import Service from './service/index';
+import Shortcut from '@codexteam/shortcuts';
 
 /**
  * Configurable options for misprints
@@ -6,7 +7,17 @@ import Service from './service/index';
 interface MisprintsConfig {
   /** Chat's identifier where message will be sent */
   chatId: string;
+  /** Shortcut should be pressed to send misprint */
+  shortcut: string;
 }
+
+/**
+ * Default configuration for misprints
+ */
+const defaultConfig = {
+  /** Shortcut should be pressed to send misprint */
+  shortcut: 'shift+a'
+};
 
 /**
  * @class Misprints
@@ -17,6 +28,8 @@ export default class Misprints {
    *  Chat's identifier where message will be sent
    */
   public chatId: string;
+  /** Shortcut should be pressed to send misprint */
+  public shortcut: string;
 
   /**
    * Create a misprints module.
@@ -26,26 +39,34 @@ export default class Misprints {
   constructor(config: MisprintsConfig) {
     this.chatId = config.chatId;
 
-    window.addEventListener('keyup', (event) => {
-      this.notifyIfNeeded(event);
+    if (config.shortcut) {
+      this.shortcut = config.shortcut;
+    } else {
+      this.shortcut = defaultConfig.shortcut;
+    }
+
+    const shortcut = new Shortcut({
+      name: this.shortcut,
+      on: document.body,
+      callback: (event) => {
+        this.notifyIfNeeded(event);
+      }
     });
   }
 
   /**
-   * Check if user tries to send feedback and send it
+   * Send selected text
    * @param {KeyboardEvent} event - keyboard event.
    */
   private async notifyIfNeeded(event: KeyboardEvent) {
-    if (event.key === 'Enter' && event.shiftKey) {
-      const selection = window.getSelection();
+    const selection = window.getSelection();
 
-      if (selection.toString().length) {
-        try {
-          const response = await Service.notify(this.chatId, selection.toString());
-          selection.empty();
-        } catch (e) {
-          console.log(e);
-        }
+    if (selection.toString().length) {
+      try {
+        const response = await Service.notify(this.chatId, selection.toString());
+        selection.empty();
+      } catch (e) {
+        console.log(e);
       }
     }
   }

@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@codexteam/shortcuts@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@codexteam/shortcuts/-/shortcuts-1.0.0.tgz#9d66a7c00c93be05b7940d46d2a82af442e8b46d"
+  integrity sha512-G7047f4qHnPtft2Gj7RsjJdXat/XXswUPjIGPHyHZeoARyIZTfX4/yTkgA3oDXvjFoC4cWN2+mKDDMdOET9/GQ==
+
 "@webassemblyjs/ast@1.8.3":
   version "1.8.3"
   resolved "https://registry.yarnpkg.com/@webassemblyjs/ast/-/ast-1.8.3.tgz#63a741bd715a6b6783f2ea5c6ab707516aa215eb"

@@ -5,10 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>CodeX Misprints</title>
     <script defer type="text/javascript" src="../dist/misprints.js"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+            font-size: 15px;
+            line-height: 1.6em;
+            background: #f6f6f6
+        }
+
+        p {
+            max-width: 700px;
+            margin: 1em auto;
+        }
+    </style>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
+            /**
+             * Get chatId with Webhooks App for @codex_bot (Slack, Telegram)
+             * @see {@link https://github.com/codex-bot/Webhooks}
+             */
             new Misprints({
-                chatId: 'Z50Y6LIC'
+                chatId: '',
+                shortcut: 'SHIFT+ENTER'
             });
         });
     </script>

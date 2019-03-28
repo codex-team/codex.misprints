@@ -28,8 +28,14 @@ yarn add @codexteam/misprints
 ### Initialization
 ```javascript
 new Misprints({
-    chatId: 'XXXXXXX'
+    chatId: 'XXXXXXX',
+    shortcut: 'SHIFT+ENTER'
 });
 ```
-Where `chatId` is chat's identifier where message will be sent.
-Take a look on [Webhooks](https://github.com/codex-bot/Webhooks) to get it.
+
+Where
+
+| name        | type      | description                                                                              |
+|-------------|-----------|------------------------------------------------------------------------------------------|
+| chatId      | `string`  | chat where message will be sent. Visit https://github.com/codex-bot/Webhooks) to get it. |
+| shortcut    | `string`  | Shortcut triggers message sending. See https://github.com/codex-team/codex.shortcuts     |
