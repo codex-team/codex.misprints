@@ -1,5 +1,5 @@
 import Service from './service/index';
-import Shortcut from '@codexteam/shortcuts'
+import Shortcut from '@codexteam/shortcuts';
 
 /**
  * Configurable options for misprints

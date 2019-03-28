@@ -29,7 +29,7 @@ yarn add @codexteam/misprints
 ```javascript
 new Misprints({
     chatId: 'XXXXXXX',
-    shortcut: 'shift+a'
+    shortcut: 'SHIFT+ENTER'
 });
 ```
 
