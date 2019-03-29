@@ -1,3 +1,5 @@
+const MAX_TEXT_LENGTH = 200;
+
 /**
  * Request body parameters
  */
@@ -23,6 +25,7 @@ export default class Service {
    * @param {string} text - selected text fragment
    */
   public static notify(chatId: string, text: string) {
+    text = text.length > MAX_TEXT_LENGTH ? text.slice(0, MAX_TEXT_LENGTH - 1) + '...' : text;
     const params = Service.standardizeParams({
       message: `💌 Misprint\n\n\`\`\`${text}\`\`\`\n\n[${document.title}](${window.location.href})`,
       parse_mode: 'Markdown'
